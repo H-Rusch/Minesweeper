@@ -1,0 +1,12 @@
+# compiled java class
+.class
+# default
+/.idea/workspace.xml
+
+# Intellij
+.idea
+out/
+*.iml
+
+# maven
+target

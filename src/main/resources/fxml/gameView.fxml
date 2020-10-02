@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+  xmlns:fx="http://javafx.com/fxml/1" fx:controller="GamePresenter">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Game">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New Game" onAction="#newGame"/>
+            <Menu mnemonicParsing="false" text="Change Difficulty">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Easy" onAction="#easy"/>
+                <MenuItem mnemonicParsing="false" text="Medium" onAction="#medium"/>
+                <MenuItem mnemonicParsing="false" text="Hard" onAction="#hard"/>
+              </items>
+            </Menu>
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="About">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Minesweeper Guide (Web)" onAction="#showGuide"/>
+            <MenuItem mnemonicParsing="false" text="Show Records" onAction="#showRecords"/>
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane
+      VBox.vgrow="ALWAYS">
+      <children>
+        <ImageView fx:id="newGame" fitHeight="45.0" fitWidth="45.0" layoutX="75.0"
+          onMouseClicked="#newGame" pickOnBounds="true" preserveRatio="true"/>
+        <TextField fx:id="minesLeft" layoutX="14.0" layoutY="2.0" prefHeight="25.0"
+          prefWidth="32.0" editable="false"/>
+        <TextField fx:id="timeUsed" layoutX="145.0" layoutY="2.0" prefHeight="25.0" prefWidth="64.0"
+          editable="false"/>
+        <GridPane fx:id="gridPane" layoutX="10.0" layoutY="50.0"/>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
