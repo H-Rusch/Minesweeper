@@ -1,4 +1,12 @@
-import java.awt.Desktop;
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.layout.GridPane;
+
+import java.awt.*;
 import java.awt.Desktop.Action;
 import java.io.IOException;
 import java.net.URI;
@@ -7,20 +15,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
-import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseButton;
-import javafx.scene.layout.GridPane;
-import lombok.Getter;
 
 public class GamePresenter {
 
   private Board board;
   private ImageView[][] images;
-  @Getter private int difficulty;
+
+  private int difficulty;
 
   private volatile Boolean timerRunning = false;
   private int time;
@@ -50,6 +51,10 @@ public class GamePresenter {
 
     newGame();
     newGame.requestFocus();
+  }
+
+  public int getDifficulty() {
+    return difficulty;
   }
 
   /** Setter for FxApplication. */

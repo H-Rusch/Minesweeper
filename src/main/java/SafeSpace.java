@@ -1,7 +1,5 @@
-import lombok.Getter;
-
 public class SafeSpace extends Field {
-  @Getter private int surroundingMines;
+  private int surroundingMines;
 
   /**
    * Constructor creating a SafeSpace. Sets the image for this space based on the surrounding mines.
@@ -31,5 +29,9 @@ public class SafeSpace extends Field {
     } else if (surroundingMines == 8) {
       super.setImgPath("img/fields/8.png");
     }
+  }
+
+  public int getSurroundingMines() {
+    return surroundingMines;
   }
 }

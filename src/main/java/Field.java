@@ -1,19 +1,29 @@
-import lombok.Getter;
-
 public class Field {
 
-  @Getter private boolean marked = false;
-  @Getter private boolean revealed = false;
-  @Getter private String imgPath;
+  private boolean marked = false;
+  private boolean revealed = false;
+  private String imgPath;
 
   public void setImgPath(String imgPath) {
     this.imgPath = imgPath;
   }
 
+  public boolean isMarked() {
+    return marked;
+  }
+
+  public boolean isRevealed() {
+    return revealed;
+  }
+
+  public String getImgPath() {
+    return imgPath;
+  }
+
   /**
    * Click a field as long as it is not already revealed or marked.
    *
-   * @return boolean wether clicking this field was successfull
+   * @return boolean whether clicking this field was successful
    */
   public boolean click() {
     if (!revealed && !marked) {

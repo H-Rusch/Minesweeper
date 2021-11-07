@@ -1,14 +1,13 @@
 import java.util.Random;
-import lombok.Getter;
 
 public class Board {
 
   private Field[][] board;
-  @Getter private int height;
-  @Getter private int width;
+  private int height;
+  private int width;
   private int fieldsLeft;
-  @Getter private int mineCount;
-  @Getter private int markCount;
+  private int mineCount;
+  private int markCount;
 
   private boolean running = true;
 
@@ -34,6 +33,22 @@ public class Board {
 
     generateMines(mineCount);
     generateSpaces();
+  }
+
+  public int getHeight() {
+    return height;
+  }
+
+  public int getWidth() {
+    return width;
+  }
+
+  public int getMineCount() {
+    return mineCount;
+  }
+
+  public int getMarkCount() {
+    return markCount;
   }
 
   /**
